@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-import { MainApp } from './styled'
-
-import styled from 'styled-components';
+import { Heading, Text, Button, Container, Center, Highlight } from '@chakra-ui/react'
 
 function App() {
 
@@ -32,14 +27,29 @@ function App() {
   }
 
   return (
-    <MainApp>
-      Hello World!
-
-      <button onClick={() => addCount(count)}>
-        count is: {count}
-      </button>
-
-    </MainApp>
+    <>
+      <Container maxW={['full', 'container.lg', 'container.xl']} mt={4} mb={4}>
+        <Center>
+          <Heading>
+            <Highlight query='Stranger' styles={{ px: '1', py: '1', rounded: 'full', bg: 'red.100' }}>
+              Welcome Stranger ! 🎉
+            </Highlight> 
+          </Heading>
+        </Center>
+        <Center>
+          <Text fontSize='lg' fontStyle="italic">This is my sample React webapp!</Text>
+        </Center>
+        <Center mt={6}>
+          <Text fontSize='sm'color='tomato' fontWeight="bold">Click The Button Below to Count!</Text>
+        </Center>        
+        <Center>
+          <Button colorScheme='yellow' variant='solid' border='2px'
+                  borderColor='green.500'onClick={() => addCount(count)}>
+            count is: {count}
+          </Button>
+        </Center>
+      </Container>
+    </>
   )
 }
 
