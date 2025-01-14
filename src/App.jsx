@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
+import { MainApp } from './styled'
+
+import styled from 'styled-components';
 
 function App() {
 
@@ -12,6 +15,8 @@ function App() {
 
   const obj1 = { 'name': 'Alvin'}
 
+  const [firstName, lastName ] = ['Alvin', 'Pogi'];
+
   if (count > 10) {
     setCount(0)
   } else {
@@ -21,17 +26,20 @@ function App() {
       console.log(JSON.parse(localStorage.getItem('myData')))
 
       }, [count])
+
+      // console.log('firstName-->', firstName);
+      // console.log('lastName-->', lastName);
   }
 
   return (
-    <div className="App">
-      Hello World! <br />
+    <MainApp>
+      Hello World!
 
       <button onClick={() => addCount(count)}>
         count is: {count}
       </button>
 
-    </div>
+    </MainApp>
   )
 }
 
